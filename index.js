@@ -12,6 +12,6 @@ app.use(express.static('client'));
 io.on('connection', socket => {
   console.log('A user connected with the id: ', socket.id);
   socket.on('chat', msg => {
-    console.log('message: ' + msg);
+    io.emit('chat', msg);
   });
 });

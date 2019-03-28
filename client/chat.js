@@ -6,9 +6,12 @@ let output = document.getElementById('message-output');
 
 const sendText = () => {
   socket.emit('chat', input.value);
-  output.innerHTML += '<p>' + input.value + '</p>';
-  input.value = '';
   return false;
 };
 
 button.addEventListener('click', sendText);
+
+socket.on('chat', msg => {
+  output.innerHTML += '<p>' + msg + '</p>';
+  input.value = '';
+});
