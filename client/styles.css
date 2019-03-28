@@ -13,24 +13,38 @@ body {
   border-radius: 7px;
 }
 
-.output-container {
-  height: 600px;
+#output-container {
+  height: 557px;
   border: solid black 1px;
-  margin: 10px;
+  margin: 20px;
+  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow: auto;
 }
 
-.message-output {
-  border: solid black 1px;
+body::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+p {
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
   font-size: 1rem;
+  text-align: center;
+  display: table;
 }
 
-.input-container {
+p:nth-child(odd) {
+  background-color: red;
+}
+p:nth-child(even) {
+  background-color: blue;
+}
+
+#input-container {
   padding: 10px;
   width: 100%;
   display: flex;
@@ -40,7 +54,7 @@ body {
   box-sizing: border-box;
 }
 
-.message-input {
+#message-input {
   height: 20px;
   width: 80%;
   padding: 5px;
